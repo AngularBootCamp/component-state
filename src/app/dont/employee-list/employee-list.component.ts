@@ -9,7 +9,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 */
 @Component({
   selector: 'employee-list',
-  templateUrl: './employee-list.component.html',
+  templateUrl: './employee-list.component.html'
 })
 export class EmployeeListComponent {
   @Input() curEmployees: string[];

@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 */
 @Component({
   selector: 'dont-example',
-  templateUrl: './dont.component.html',
+  templateUrl: './dont.component.html'
 })
 export class DontComponent {
   currentEmployees = [
