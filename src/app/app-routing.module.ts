@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, ExtraOptions, PreloadAllModules } from '@angular/router';
+import { Routes, RouterModule, ExtraOptions } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'do', pathMatch: 'full' },

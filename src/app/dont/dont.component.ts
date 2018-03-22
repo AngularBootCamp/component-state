@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 
 /*
-
   Notice the bloat this top level component has taken on. It needs
   to "own" the data in order to make the appropriate modifications.
   Problems: file size/scope, mixing of concerns, all other problems
   associated with monoliths.
-
 */
+
 @Component({
   selector: 'dont-example',
   templateUrl: './dont.component.html'
