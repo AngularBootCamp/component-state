@@ -9,7 +9,8 @@ const routes: Routes = [
 
 const config: ExtraOptions = {
   useHash: true,
-  enableTracing: false
+  enableTracing: false,
+  scrollPositionRestoration: 'enabled'
 };
 
 @NgModule({
