@@ -12,8 +12,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './position-list.component.html'
 })
 export class PositionListComponent {
-  @Input() curPositions: string[];
-  @Input() newPositions: string[];
+  @Input() curPositions: string[] = [];
+  @Input() newPositions: string[] = [];
   @Output() ackPosition = new EventEmitter<string>();
 
   ackPos(position: string) {

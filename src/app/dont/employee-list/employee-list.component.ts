@@ -12,8 +12,8 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './employee-list.component.html'
 })
 export class EmployeeListComponent {
-  @Input() curEmployees: string[];
-  @Input() newEmployees: string[];
+  @Input() curEmployees: string[] = [];
+  @Input() newEmployees: string[] = [];
   @Output() ackEmployee = new EventEmitter<string>();
 
   ackEmp(employee: string) {
