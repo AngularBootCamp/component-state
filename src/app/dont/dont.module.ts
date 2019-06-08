@@ -8,9 +8,7 @@ import { DontComponent } from './dont.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PositionListComponent } from './position-list/position-list.component';
 
-const dontRoutes: Routes = [
-  { path: '', component: DontComponent }
-];
+const dontRoutes: Routes = [{ path: '', component: DontComponent }];
 
 @NgModule({
   declarations: [
@@ -24,4 +22,4 @@ const dontRoutes: Routes = [
     SharedModule
   ]
 })
-export class DontModule { }
+export class DontModule {}

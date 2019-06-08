@@ -12,13 +12,12 @@ export class EmployeeListComponent {
     'David Dennison'
   ];
 
-  newEmployees = [
-    'Erin Ericcson',
-    'Frank Ferdinand'
-  ];
+  newEmployees = ['Erin Ericcson', 'Frank Ferdinand'];
 
   ackEmployee(employee: string) {
-    this.newEmployees = this.newEmployees.filter(curEmployee => curEmployee !== employee);
+    this.newEmployees = this.newEmployees.filter(
+      curEmployee => curEmployee !== employee
+    );
     this.currentEmployees.push(employee);
   }
 }

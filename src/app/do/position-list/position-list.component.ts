@@ -12,13 +12,12 @@ export class PositionListComponent {
     'Phone Bank Worker'
   ];
 
-  newPositions = [
-    'Manager',
-    'Break Room Attendant'
-  ];
+  newPositions = ['Manager', 'Break Room Attendant'];
 
   ackPosition(position: string) {
-    this.newPositions = this.newPositions.filter(curPosition => curPosition !== position);
+    this.newPositions = this.newPositions.filter(
+      curPosition => curPosition !== position
+    );
     this.currentPositions.push(position);
   }
 }

@@ -8,9 +8,7 @@ import { DoComponent } from './do.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { PositionListComponent } from './position-list/position-list.component';
 
-const doRoutes: Routes = [
-  { path: '', component: DoComponent }
-];
+const doRoutes: Routes = [{ path: '', component: DoComponent }];
 
 @NgModule({
   declarations: [
@@ -24,4 +22,4 @@ const doRoutes: Routes = [
     SharedModule
   ]
 })
-export class DoModule { }
+export class DoModule {}

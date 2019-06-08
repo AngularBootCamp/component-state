@@ -4,5 +4,4 @@ import { Component } from '@angular/core';
   selector: 'do-example',
   templateUrl: './do.component.html'
 })
-export class DoComponent {
-}
+export class DoComponent {}

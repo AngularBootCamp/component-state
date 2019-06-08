@@ -3,8 +3,15 @@ import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'do', pathMatch: 'full' },
-  { path: 'do', loadChildren: './do/do.module#DoModule' },
-  { path: 'dont', loadChildren: './dont/dont.module#DontModule' }
+  {
+    path: 'do',
+    loadChildren: () => import('./do/do.module').then(m => m.DoModule)
+  },
+  {
+    path: 'dont',
+    loadChildren: () =>
+      import('./dont/dont.module').then(m => m.DontModule)
+  }
 ];
 
 const config: ExtraOptions = {
@@ -17,4 +24,4 @@ const config: ExtraOptions = {
   imports: [RouterModule.forRoot(routes, config)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
