@@ -2,24 +2,24 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { SharedModule } from '../shared-module/shared.module';
+import { TodoListModule } from '../todo-list/todo-list.module';
 
 import { DontComponent } from './dont.component';
-import { EmployeeListComponent } from './employee-list/employee-list.component';
-import { PositionListComponent } from './position-list/position-list.component';
+import { HomeTaskListComponent } from './home-task-list/home-task-list.component';
+import { WorkTaskListComponent } from './work-task-list/work-task-list.component';
 
 const dontRoutes: Routes = [{ path: '', component: DontComponent }];
 
 @NgModule({
   declarations: [
-    EmployeeListComponent,
-    PositionListComponent,
+    WorkTaskListComponent,
+    HomeTaskListComponent,
     DontComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(dontRoutes),
-    SharedModule
+    TodoListModule
   ]
 })
 export class DontModule {}

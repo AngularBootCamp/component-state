@@ -1,17 +1,19 @@
 <div class="two-across">
-  <employee-list
-    [curEmployees]="currentEmployees"
-    [newEmployees]="newEmployees"
-    (ackEmployee)="ackEmployee($event)"
+  <work-task-list
+    [done]="doneWork"
+    [todo]="doneWork"
+    (toggleTask)="toggleTask($event, 'work')"
   >
-  </employee-list>
+  </work-task-list>
 
-  <position-list
-    (ackPosition)="ackPosition($event)"
-    [curPositions]="currentPositions"
-    [newPositions]="newPositions"
+  <home-task-list
+    (toggleTask)="toggleTask($event, 'home')"
+    [done]="doneHome"
+    [todo]="todoHome"
   >
-  </position-list>
+  </home-task-list>
 </div>
 
-<button class="btn" (click)="ackAll()">Acknowledge All</button>
+<button class="btn" (click)="completeAll()">
+  Complete All
+</button>

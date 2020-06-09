@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { Task } from './types';
+
 /*
   Notice the bloat this top level component has taken on. It needs
   to "own" the data in order to make the appropriate modifications.
@@ -12,42 +14,54 @@ import { Component } from '@angular/core';
   templateUrl: './dont.component.html'
 })
 export class DontComponent {
-  currentEmployees = [
-    'Alice Anderson',
-    'Billy Burton',
-    'Carol Carson',
-    'David Dennison'
+  doneWork = [
+    'file paperwork',
+    'send emails',
+    'work on project A',
+    'submit report to manager'
   ];
 
-  newEmployees = ['Erin Ericcson', 'Frank Ferdinand'];
+  todoWork = ['work on project B', 'update task list'];
 
-  currentPositions = [
-    'Copier',
-    'Secretary to Customer Design Spec Engineer',
-    'Tester',
-    'Phone Bank Worker'
+  doneHome = [
+    'cook dinner',
+    'go grocery shopping',
+    'sweep the floors',
+    'do the laundry'
   ];
 
-  newPositions = ['Manager', 'Break Room Attendant'];
+  todoHome = ['fix the leaky faucet', 'mow the lawn'];
 
-  ackPosition(position: string) {
-    this.newPositions = this.newPositions.filter(
-      curPosition => curPosition !== position
-    );
-    this.currentPositions.push(position);
+  // This method is a perfect example of the complexity that's created when
+  // all of your state is managed from one location
+  toggleTask(toggle: Task, type: string) {
+    if (toggle.complete && type === 'work') {
+      this.doneWork = this.doneWork.filter(
+        curTask => curTask !== toggle.task
+      );
+      this.todoWork.push(toggle.task);
+    } else if (!toggle.complete && type === 'work') {
+      this.todoWork = this.todoWork.filter(
+        curTask => curTask !== toggle.task
+      );
+      this.doneWork.push(toggle.task);
+    } else if (toggle.complete && type === 'home') {
+      this.doneHome = this.doneHome.filter(
+        curTask => curTask !== toggle.task
+      );
+      this.todoHome.push(toggle.task);
+    } else if (!toggle.complete && type === 'home') {
+      this.todoHome = this.todoHome.filter(
+        curTask => curTask !== toggle.task
+      );
+      this.doneHome.push(toggle.task);
+    }
   }
 
-  ackEmployee(employee: string) {
-    this.newEmployees = this.newEmployees.filter(
-      curEmployee => curEmployee !== employee
-    );
-    this.currentEmployees.push(employee);
-  }
-
-  ackAll() {
-    this.newPositions.forEach(pos => this.currentPositions.push(pos));
-    this.newPositions = [];
-    this.newEmployees.forEach(emp => this.currentEmployees.push(emp));
-    this.newEmployees = [];
+  completeAll() {
+    this.todoHome.forEach(task => this.doneHome.push(task));
+    this.todoHome = [];
+    this.todoWork.forEach(task => this.doneWork.push(task));
+    this.todoWork = [];
   }
 }
