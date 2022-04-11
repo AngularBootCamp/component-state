@@ -12,9 +12,9 @@ const dontRoutes: Routes = [{ path: '', component: DontComponent }];
 
 @NgModule({
   declarations: [
-    WorkTaskListComponent,
+    DontComponent,
     HomeTaskListComponent,
-    DontComponent
+    WorkTaskListComponent
   ],
   imports: [
     CommonModule,

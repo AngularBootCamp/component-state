@@ -12,9 +12,9 @@ const doRoutes: Routes = [{ path: '', component: DoComponent }];
 
 @NgModule({
   declarations: [
-    WorkTaskListComponent,
+    DoComponent,
     HomeTaskListComponent,
-    DoComponent
+    WorkTaskListComponent
   ],
   imports: [
     CommonModule,
