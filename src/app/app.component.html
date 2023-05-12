@@ -1,17 +1,12 @@
-<header style="margin-top: 5px">
-  <nav>
-    <div class="nav-wrapper">
-      <ul>
-        <li routerLinkActive="green-background">
-          <a routerLink="/do">Do</a>
-        </li>
-        <li routerLinkActive="green-background">
-          <a routerLink="/dont">Don't</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-</header>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<nav>
+  <ul>
+    <li routerLinkActive="active-link">
+      <a routerLink="/do">Do</a>
+    </li>
+    <li routerLinkActive="active-link">
+      <a routerLink="/dont">Don't</a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

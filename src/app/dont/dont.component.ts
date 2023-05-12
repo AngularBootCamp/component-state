@@ -10,7 +10,7 @@ import { Task } from './types';
 */
 
 @Component({
-  selector: 'dont-example',
+  selector: 'app-dont-example',
   templateUrl: './dont.component.html'
 })
 export class DontComponent {

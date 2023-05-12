@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'do-example',
+  selector: 'app-do-example',
   templateUrl: './do.component.html'
 })
 export class DoComponent {}

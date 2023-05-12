@@ -1,17 +1,15 @@
-<div class="two-across">
-  <work-task-list
+<div class="task-lists">
+  <app-work-task-list
     [done]="doneWork"
     [todo]="todoWork"
     (toggleTask)="toggleTask($event, 'work')"
-  >
-  </work-task-list>
+  ></app-work-task-list>
 
-  <home-task-list
+  <app-home-task-list
     (toggleTask)="toggleTask($event, 'home')"
     [done]="doneHome"
     [todo]="todoHome"
-  >
-  </home-task-list>
+  ></app-home-task-list>
 </div>
 
-<button class="btn" (click)="completeAll()">Complete All</button>
+<button (click)="completeAll()">Complete All</button>
