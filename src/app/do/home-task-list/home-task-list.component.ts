@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
 
+import { TodoListComponent } from '../../todo-list/todo-list.component';
+
 @Component({
   selector: 'app-home-task-list',
-  templateUrl: './home-task-list.component.html'
+  templateUrl: './home-task-list.component.html',
+  standalone: true,
+  imports: [TodoListComponent]
 })
 export class HomeTaskListComponent {
   done = [

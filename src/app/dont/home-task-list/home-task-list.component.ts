@@ -5,6 +5,7 @@ import {
   Output
 } from '@angular/core';
 
+import { TodoListComponent } from '../../todo-list/todo-list.component';
 import { Task } from '../types';
 
 /*
@@ -16,7 +17,9 @@ import { Task } from '../types';
 */
 @Component({
   selector: 'app-home-task-list',
-  templateUrl: './home-task-list.component.html'
+  templateUrl: './home-task-list.component.html',
+  standalone: true,
+  imports: [TodoListComponent]
 })
 export class HomeTaskListComponent {
   @Input() done: string[] = [];

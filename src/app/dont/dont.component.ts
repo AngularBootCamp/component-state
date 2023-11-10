@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
+import { HomeTaskListComponent } from './home-task-list/home-task-list.component';
 import { Task } from './types';
+import { WorkTaskListComponent } from './work-task-list/work-task-list.component';
 
 /*
   Notice the bloat this top level component has taken on. It needs
@@ -10,10 +12,11 @@ import { Task } from './types';
 */
 
 @Component({
-  selector: 'app-dont-example',
-  templateUrl: './dont.component.html'
+  templateUrl: './dont.component.html',
+  standalone: true,
+  imports: [WorkTaskListComponent, HomeTaskListComponent]
 })
-export class DontComponent {
+export default class DontComponent {
   doneWork = [
     'file paperwork',
     'send emails',
