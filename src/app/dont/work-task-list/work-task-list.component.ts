@@ -22,8 +22,8 @@ import { Task } from '../types';
   imports: [TodoListComponent]
 })
 export class WorkTaskListComponent {
-  @Input() done: string[] = [];
-  @Input() todo: string[] = [];
+  @Input({ required: true }) done!: string[];
+  @Input({ required: true }) todo!: string[];
   @Output() toggleTask = new EventEmitter<Task>();
 
   checkbox = 'check_box';
