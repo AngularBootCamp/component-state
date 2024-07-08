@@ -1,6 +1,8 @@
 <ul class="collection">
-  <li (click)="toggle(task)" *ngFor="let task of list">
-    <i class="material-icons">{{ icon }}</i>
-    {{ task }}
-  </li>
+  @for (task of list; track task) {
+    <li (click)="toggle(task)">
+      <i class="material-icons">{{ icon }}</i>
+      {{ task }}
+    </li>
+  }
 </ul>
